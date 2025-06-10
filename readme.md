@@ -9,6 +9,7 @@ docker exec -it test-app bash
 cd project
 
 #Install composer packages
+
 composer install
 
 #Run calculate commission command
