@@ -141,3 +141,9 @@ php bin/console calculate-commissions
 ./vendor/bin/phpunit tests
 php bin/console calculate-commissions
 exit
+cd project
+composer install
+php bin/console calculate-commissions
+php bin/console calculate-commissions
+./vendor/bin/phpunit tests
+exit
