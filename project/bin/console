@@ -1,0 +1,15 @@
+#!/usr/bin/env php
+<?php
+
+require __DIR__.'/../vendor/autoload.php';
+
+//DI
+$containerBuilder = new \DI\ContainerBuilder();
+$containerBuilder->addDefinitions(__DIR__.'/../config/services.php');
+$containerBuilder->useAutowiring(true);
+$container = $containerBuilder->build();
+
+//Console commands
+$application = new \Symfony\Component\Console\Application();
+$application->add($container->get(\App\Commands\CalculateCommissionsCommand::class));
+$application->run();
